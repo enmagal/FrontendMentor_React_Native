@@ -1,9 +1,19 @@
 import { StatusBar } from "expo-status-bar";
-import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  Dimensions,
+} from "react-native";
 
 export default function App() {
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView
+      contentContainerStyle={styles.contentContainer}
+      style={styles.container}
+    >
       <Image
         style={styles.image}
         source={require("./assets/images/image-omelette.jpeg")}
@@ -19,14 +29,20 @@ export default function App() {
   );
 }
 
+const windowWidth = Dimensions.get("window").width;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: "dodgerblue",
+  },
+  contentContainer: {
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: "flex-start",
   },
   image: {
     width: "100%",
+    resizeMode: "contain",
   },
 });
