@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { ScrollView, Dimensions, StyleSheet } from "react-native";
+import { ScrollView, Dimensions, StyleSheet, SafeAreaView } from "react-native";
 import Landing from "./assets/components/Landing";
 import Ingredients from "./assets/components/Ingredients";
 import Instructions from "./assets/components/Instructions";
@@ -8,16 +8,15 @@ import Bar from "./assets/components/Bar";
 
 export default function App() {
   return (
-    <ScrollView
-      contentContainerStyle={styles.contentContainer}
-      style={styles.container}
-    >
-      <Landing />
-      <Ingredients />
-      <Bar />
-      <Instructions />
-      <Bar />
-      <Nutrition />
+    <ScrollView style={styles.container}>
+      <SafeAreaView style={styles.flex}>
+        <Landing />
+        <Ingredients />
+        <Bar />
+        <Instructions />
+        <Bar />
+        <Nutrition />
+      </SafeAreaView>
       <StatusBar style="auto" />
     </ScrollView>
   );
@@ -28,8 +27,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
   },
-  contentContainer: {
-    justifyContent: "center",
+  flex: {
+    flex: 1,
   },
 });
 

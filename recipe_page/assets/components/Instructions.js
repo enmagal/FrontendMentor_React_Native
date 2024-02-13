@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, FlatList } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View, FlatList } from "react-native";
 
 const DATA = [
   {
@@ -50,7 +50,7 @@ const Item = ({ title, content }) => (
 
 function Instructions(props) {
   return (
-    <View>
+    <SafeAreaView>
       <Text style={styles.title}>Instructions</Text>
       <FlatList
         data={DATA}
@@ -59,7 +59,7 @@ function Instructions(props) {
         )}
         keyExtractor={(item) => item.id}
       />
-    </View>
+    </SafeAreaView>
   );
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, StyleSheet, Text, View, FlatList } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View, FlatList } from "react-native";
 
 const DATA = [
   {
@@ -33,7 +33,7 @@ const Item = ({ title, content }) => (
 
 function Nutrition(props) {
   return (
-    <View>
+    <SafeAreaView>
       <Text style={styles.title}>Nutrition</Text>
       <Text>
         The table below shows nutritional values per serving without the
@@ -46,7 +46,7 @@ function Nutrition(props) {
         )}
         keyExtractor={(item) => item.id}
       />
-    </View>
+    </SafeAreaView>
   );
 }
 

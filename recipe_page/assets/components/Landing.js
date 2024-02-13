@@ -1,6 +1,13 @@
 import React from "react";
 
-import { Image, StyleSheet, Text, View, FlatList } from "react-native";
+import {
+  SafeAreaView,
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  FlatList,
+} from "react-native";
 
 const DATA = [
   {
@@ -31,7 +38,7 @@ const Item = ({ title, content }) => (
 
 function Landing(props) {
   return (
-    <View>
+    <SafeAreaView>
       <Image
         style={styles.image}
         source={require("../images/image-omelette.jpeg")}
@@ -42,7 +49,7 @@ function Landing(props) {
         combines beaten eggs cooked to perfection, optionally filled with your
         choice of cheese, vegetables, or meats.
       </Text>
-      <View style={styles.containerPrepTime}>
+      <SafeAreaView style={styles.containerPrepTime}>
         <Text style={styles.titlePrepTime}>Preparation time</Text>
         <FlatList
           data={DATA}
@@ -51,8 +58,8 @@ function Landing(props) {
           )}
           keyExtractor={(item) => item.id}
         />
-      </View>
-    </View>
+      </SafeAreaView>
+    </SafeAreaView>
   );
 }
 
