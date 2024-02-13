@@ -1,12 +1,10 @@
 import { StatusBar } from "expo-status-bar";
-import {
-  Image,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-  Dimensions,
-} from "react-native";
+import { ScrollView, Dimensions, StyleSheet } from "react-native";
+import Landing from "./assets/components/Landing";
+import Ingredients from "./assets/components/Ingredients";
+import Instructions from "./assets/components/Instructions";
+import Nutrition from "./assets/components/Nutrition";
+import Bar from "./assets/components/Bar";
 
 export default function App() {
   return (
@@ -14,35 +12,25 @@ export default function App() {
       contentContainerStyle={styles.contentContainer}
       style={styles.container}
     >
-      <Image
-        style={styles.image}
-        source={require("./assets/images/image-omelette.jpeg")}
-      />
-      <Text>Simple Omelette Recipe</Text>
-      <Text>
-        An easy and quick dish, perfect for any meal. This classic omelette
-        combines beaten eggs cooked to perfection, optionally filled with your
-        choice of cheese, vegetables, or meats.
-      </Text>
+      <Landing />
+      <Ingredients />
+      <Bar />
+      <Instructions />
+      <Bar />
+      <Nutrition />
       <StatusBar style="auto" />
     </ScrollView>
   );
 }
 
-const windowWidth = Dimensions.get("window").width;
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "dodgerblue",
+    backgroundColor: "#fff",
   },
   contentContainer: {
-    flex: 1,
-    flexDirection: "column",
-    justifyContent: "flex-start",
-  },
-  image: {
-    width: "100%",
-    resizeMode: "contain",
+    justifyContent: "center",
   },
 });
+
+const windowWidth = Dimensions.get("window").width;
