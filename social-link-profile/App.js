@@ -1,9 +1,23 @@
 import { StatusBar } from "expo-status-bar";
+import { useFonts } from "expo-font";
 import { StyleSheet, Text, View, Image, Button } from "react-native";
 import colors from "./app/config/colors";
 import CustomButton from "./app/components/CustomButton";
+import {
+  Inter_400Regular,
+  Inter_600SemiBold,
+  Inter_700Bold,
+} from "@expo-google-fonts/inter";
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    Inter_400Regular,
+    Inter_600SemiBold,
+    Inter_700Bold,
+  });
+  if (!fontsLoaded) {
+    return <Text>Loading...</Text>;
+  }
   return (
     <View style={styles.container}>
       <View style={styles.card}>
@@ -52,20 +66,28 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "90%",
     paddingVertical: 20,
+    borderRadius: 15,
   },
   name: {
     color: colors.white,
-    fontSize: 30,
+    fontSize: 25,
+    fontFamily: "Inter_600SemiBold",
   },
   location: {
     color: colors.green,
+    fontFamily: "Inter_700Bold",
+    marginVertical: 5,
   },
   catch: {
     color: colors.white,
+    fontFamily: "Inter_400Regular",
+    fontSize: 14,
+    marginVertical: 20,
   },
   avatar: {
     borderRadius: 100,
     height: 100,
     width: 100,
+    marginBottom: 20,
   },
 });
