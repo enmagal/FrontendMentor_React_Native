@@ -1,6 +1,6 @@
-# FrontendMentor_React_Native
+# FrontendMentor React Native 🤓
 
-# Init an expo app
+## Init an expo app
 
 ```Bash
 npx create-expo-app AwesomeProject
@@ -9,28 +9,28 @@ cd AwesomeProject
 npx expo start
 ```
 
-# Run the app
+## Run the app
 
 ```Bash
 npm start
 ```
 
-# Use custom font
+## Use custom font
 
-## 1. Install the font with expo
+1. Install the font with expo
 
 ```Bash
 npx expo install @expo-google-fonts/inter expo-font
 ```
 
-## 2. Import the fonts in your JS file
+2. Import the fonts in your JS file
 
 ```javascript
 import { Inter_400Regular } from "@expo-google-fonts/inter";
 import { useFonts } from "expo-font";
 ```
 
-## 3. Define font variables
+3. Define font variables
 
 ```javascript
 export default function App() {
@@ -45,7 +45,7 @@ export default function App() {
 }
 ```
 
-## 4. Set your style in your stylesheet
+4. Set your style in your stylesheet
 
 ```javascript
 const styles = StyleSheet.create({
